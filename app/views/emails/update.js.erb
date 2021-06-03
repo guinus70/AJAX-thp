@@ -1,0 +1,11 @@
+if (<%= @email.read %>) {
+  document.getElementById('btn-read').innerHTML = "Marquer comme non lu"
+  document.getElementById('<%= @email.id %>').classList.remove("btn btn-info")
+  document.getElementById('<%= @email.id %>').classList.add("btn btn-success")
+  <%= @email.update(read: false) %>
+} else {
+  document.getElementById('btn-read').innerHTML = "Marquer comme non lu"
+  document.getElementById('<%= @email.id %>').classList.add("btn btn-info")
+  document.getElementById('<%= @email.id %>').classList.remove("btn btn-success")
+  <%= @email.update(read: true) %>
+}

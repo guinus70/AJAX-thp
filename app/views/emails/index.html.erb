@@ -1,0 +1,30 @@
+<div class="container d-flex justify-content-center">
+
+<%= form_tag(emails_path, method: "post", remote: true) do %>
+    <%= submit_tag("Recevoir un Email", class: "btn btn-info") %>
+<% end %>
+
+</div>
+
+<br />
+
+<div class="container d-flex justify-content-center col-4">
+<table id="gmail_list" class="table">
+	<% Email.all.each do |email|  %>
+	<tr>
+		<td id="email-id<%= email.id %>">
+      <%= email.object %>
+    </td>
+    <td id="email-show<%= email.id %>">
+    	<%= render 'email', email: email %>
+    </td>
+
+  </tr>
+  <% end %>
+</table>
+</div>
+
+
+
+
+

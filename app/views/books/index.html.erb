@@ -1,0 +1,18 @@
+ <h1>Books#index</h1>
+<ul id="book-list">
+  <% @books.each do |book| %>
+    <li>"<%= book.title %>" by <b><%= book.author  %></b></li>
+  <% end %>
+</ul>
+
+<div class="form">
+  <%= form_tag(books_path, method: :post, class: "form", remote: true) do %>
+    <label for="title">Title
+    <%= text_field_tag  :title %>
+
+    <label for="author">author
+    <%= text_field_tag  :author %>
+
+    <%= submit_tag 'create', :name => 'commit'%>
+  <% end %>
+</div>

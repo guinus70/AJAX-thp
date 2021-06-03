@@ -1,0 +1,7 @@
+ 
+<% if email.read %>
+  <%= link_to("Voir l'email", email_path(email.id), id: email.id, class: "btn btn-success", remote: true) %>
+
+<% else %>
+   <%= link_to("Voir l'email", email_path(email.id), id: email.id, class: "btn btn-info", remote: true) %>
+<% end %>

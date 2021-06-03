@@ -1,0 +1,1 @@
+document.getElementById('email-show<%= @email.id%>').innerHTML = "<h2><%= @email.object %></h2><br /><p><%= @email.body %></p><br/><%= escape_javascript link_to("Supprimer l'email", email_path, method: :delete, remote: true) %>  <%= escape_javascript link_to("Marquer comme non lu", emails_path, id:"btn-read", class: "btn btn-info", remote: true) %>";
